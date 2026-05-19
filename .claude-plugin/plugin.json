@@ -1,0 +1,15 @@
+{
+  "name": "ai-initiative-diagnostic",
+  "version": "0.1.0",
+  "description": "Diagnose AI initiatives via a four-role framework: Investigator, Devil's Advocate, Long-term Strategist, Senior Advisor. Built around three questions — Real Friction, Right Solution Mode, Value Accumulates.",
+  "author": "Ray Han",
+  "homepage": "https://github.com/geledek/ai-initiative-diagnostic-skill",
+  "license": "MIT",
+  "keywords": [
+    "ai-strategy",
+    "ai-evaluation",
+    "decision-framework",
+    "executive",
+    "claude-skill"
+  ]
+}
