@@ -1,13 +1,13 @@
 ---
 name: ai-initiative-diagnostic
-description: Use whenever evaluating an AI initiative, AI investment thesis, AI pilot proposal, or proposed AI deployment. Diagnoses using a four-role framework — Investigator, Devil's Advocate, Long-term Strategist, Senior Advisor — built around three questions: Real Friction, Right Solution Mode, Value Accumulates. Trigger this skill any time someone is considering whether to build, buy, fund, or kill an AI initiative, even if they don't explicitly ask for a diagnostic.
+description: Use whenever evaluating an AI initiative, AI investment thesis, AI pilot proposal, or proposed AI deployment. Diagnoses using a five-role framework — Investigator, Devil's Advocate, Long-term Strategist, Realist, Senior Advisor — built around four questions: Real Friction, Right Solution Mode, Value Accumulates, Right Capability. Trigger this skill any time someone is considering whether to build, buy, fund, or kill an AI initiative, even if they don't explicitly ask for a diagnostic.
 ---
 
 # AI Initiative Diagnostic
 
-Diagnose AI initiatives in four sequential roles. Maintain all prior reasoning as state — each role builds on the previous role's output.
+Diagnose AI initiatives in five sequential roles. Maintain all prior reasoning as state — each role builds on the previous role's output.
 
-After each role, output a clearly labeled section, then proceed to the next role. Do not stop until all four are complete.
+After each role, output a clearly labeled section, then proceed to the next role. Do not stop until all five are complete.
 
 ## Role 1: Investigator (Q1 — Real Friction?)
 
@@ -32,6 +32,8 @@ RELIABILITY TEST. "Would I be comfortable if this output reached the end consequ
 
 OPERATIONAL-MODE CHECK. Strip out the human-in-loop language from the pitch. In the moment the output reaches the end party, is a human actually between the AI and them? If no, the initiative is operationally Replace regardless of how it is described.
 
+CONSEQUENCE LEVEL CHECK. Does this application handle tasks or queries of different consequence levels? If yes, the most consequential type sets the mode for the whole application.
+
 ERROR LOOP.
 - No one catches errors → Replace mode. Name the risk.
 - Human in loop by design → Augment mode. Name their role.
@@ -40,16 +42,17 @@ ERROR LOOP.
 MODE VERDICT. State: Replace / Augment / Create. State the single condition that must hold. Flag if it is not yet met.
 
 Output:
-RELIABILITY TEST | OPERATIONAL MODE | ERROR LOOP | MODE | CRITICAL CONDITION | FAILURE RISK
+RELIABILITY TEST | OPERATIONAL MODE | CONSEQUENCE LEVEL | ERROR LOOP | MODE | CRITICAL CONDITION | FAILURE RISK
 
 ## Role 3: Long-term Strategist (Q3 — Value Accumulates?)
 
-WHAT ACCUMULATES?
-(a) Productivity tool — costs down, volume up. Real value, no compounding.
-(b) Improving solution — model gets more accurate through operation.
-(c) Moat — proprietary asset competitor cannot replicate on day one.
+WHAT ACCUMULATES? Assess all three dimensions. A gap on any one produces Fund-with-condition, not Fund.
 
-Name which. Specify what accumulates and why it is hard to reconstruct.
+(a) Gets better — does the solution improve as it is used, through data accumulation, model learning, or network effects? A solution that plateaus on day one is a productivity tool.
+(b) Switching costs — how costly is it for a user or organisation to leave? High accumulation with low switching costs is still vulnerable.
+(c) Competitive preference — do users actively choose this over alternatives, or do they tolerate it because leaving is expensive? Locked-in users who route around the tool in practice produce low actual adoption despite high nominal retention.
+
+Name which dimensions pass and which do not. Specify what accumulates and why it is hard to reconstruct.
 
 MEASUREMENT CHECK — THE KLARNA WARNING.
 Name three metrics that prove this is working. Are these the metrics that would naturally get tracked? Flag any gap between what matters and what is easy to measure.
@@ -59,7 +62,20 @@ BLAST-RADIUS CHECK. If this fails on day one, who sees it — internal users, pa
 Output:
 WHAT ACCUMULATES | THREE METRICS | MEASUREMENT GAP | BLAST RADIUS
 
-## Role 4: Senior Advisor (Synthesis)
+## Role 4: Realist (Q4 — Right Capability?)
+
+Your job is to identify the execution gaps that would prevent this initiative from working in practice, regardless of how sound the concept is.
+
+DATA. Is the data AI-ready? Does the organisation have confirmed legal rights to use it?
+
+INTEGRATION. Is there a plan to connect the AI output to real operational workflows — including what happens when the AI is wrong?
+
+Output:
+DATA | INTEGRATION | Q4 VERDICT (Pass / Gaps / Fail)
+
+## Role 5: Senior Advisor (Synthesis)
+
+Read the outputs of Roles 1–4. Produce the verdict. Do not introduce new assessment here.
 
 Write for a board audience. Be direct.
 
@@ -69,6 +85,7 @@ MODE: [Replace / Augment / Create]
 Q1 — REAL FRICTION? (2 sentences)
 Q2 — RIGHT SOLUTION MODE? (2 sentences)
 Q3 — VALUE ACCUMULATES? (2 sentences)
+Q4 — RIGHT CAPABILITY? (2 sentences)
 
 STRONGEST LINK: Where this idea is most solid.
 WEAKEST LINK: Where this idea is most at risk of failing silently.
